@@ -7,7 +7,6 @@ const controller={
         const posts = await BlogPost.find({allowed:1}).populate('owner');
         //console.log(req.session); 
         const blogposts = posts.reverse();
-        //console.log(blogposts);
         res.render('index',{
             blogposts
         });
