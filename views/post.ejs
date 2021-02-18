@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('layout/header'); -%>
+
+<body>
+
+  <!-- Navigation -->
+  <%- include('layout/navbar'); -%>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url(img/about-bg.jpg)">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1><%= blogpost.title %></h1>
+            <h2 class="subheading"><%= blogpost.body %></h2>
+            <span class="meta">Posted by
+              <a href="#"><%= blogpost.owner.name %></a>
+              on <%= blogpost.datePosted %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <%= blogpost.body %>
+        </div>
+    </div>
+    <form action="/delete/post/<%= blogpost._id %>" method="POST">
+    <button type="submit" class="btn btn-danger" style="margin-left: 40%; margin-top:100px;" id="sendMessageButton">Delete</button>
+  </form>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <%- include('layout/footer'); -%>
+
+  <!-- Bootstrap core JavaScript -->
+  <%- include('layout/script'); -%>
+
+</body>
+
+</html>
