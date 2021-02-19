@@ -22,7 +22,7 @@ const controller={
     aboutController:(req,res)=>{
         res.render('about');
     },
-
+    //Checking Application
     //Saving Posts
     storePostsController : async(req,res)=>{
         try{ 
